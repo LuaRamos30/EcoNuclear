@@ -1,0 +1,588 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700&display=swap");
+
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+  background-color: #c5cdd3;
+  overflow-x: hidden;
+}
+
+/*Navbar*/
+.cabecalho {
+  padding: 5px 4%;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  transition: 1s;
+}
+
+.cabecalho.rolagem {
+  background-color: rgb(255, 255, 255);
+  padding: 1px 4%;
+}
+
+.cabecalho.rolagem a {
+  color: black;
+}
+.cabecalho.rolagem #logonome {
+  color: #0097b2;
+}
+
+.logo {
+  max-width: 75px; /* Define a largura máxima da imagem */
+  height: auto; /* Mantém a proporção da imagem */
+  margin-right: 20px; /* Adiciona espaço à direita da imagem */
+}
+.logonome {
+  display: none;
+}
+.cabecalho_menu {
+  display: flex;
+  align-items: center;
+  background-color: #61a06500;
+}
+
+.cabecalho a {
+  margin: 0 40px;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  text-decoration: none;
+  color: #466586;
+  white-space: nowrap;
+  text-transform: uppercase; /* Transforma todo o texto em maiúsculas */
+  font-weight: bold;
+  transition: color 0.5s ease;
+}
+
+.cabecalho a:hover {
+  color: #8bc3ff;
+}
+
+/* Estilos para o ícone do menu hambúrguer */
+.menu-icon {
+  display: none;
+  position: relative;
+  cursor: pointer;
+}
+
+.menu-icon span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: #466586;
+  position: relative;
+}
+
+.menu-icon span::before,
+.menu-icon span::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #466586;
+  position: absolute;
+  left: 0;
+  transition: transform 0.3s ease;
+}
+
+.menu-icon span::before {
+  top: -6px;
+}
+
+.menu-icon span::after {
+  bottom: -6px;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+.menu-toggle:checked + .menu-icon span::before {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.menu-toggle:checked + .menu-icon span::after {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+.menu-toggle:checked + .menu-icon span {
+  background-color: transparent; /* Esconde a linha do meio ao transformar */
+}
+
+/*Topo Site*/
+
+.topo_site_home {
+  background-image: url(../assets/banner.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column; /* Alinha os itens verticalmente */
+  justify-content: center; /* Centraliza os itens horizontalmente */
+  align-items: center; /* Centraliza os itens verticalmente */
+  height: 100vh;
+}
+
+.topo_site_home h1 {
+  color: rgb(255, 255, 255);
+  margin-top: 7%;
+  margin-bottom: 3%;
+  display: flex;
+  justify-content: center;
+}
+
+.topo_site_home img {
+  width: 50%;
+  height: 20%;
+}
+
+.topo_site_home a {
+  margin: 1%;
+  display: inline-block;
+  cursor: pointer;
+  padding: 12px 24px;
+
+  font-weight: 600;
+  border-radius: 45px;
+  border: 0;
+
+  color: #ffffff;
+  background: #53838a;
+  line-height: 1.15;
+  font-size: 24px;
+  text-decoration: none;
+}
+
+.topo_site_home a:hover {
+  transition: all 0.3s ease;
+  background: rgb(236, 253, 255);
+  color: #35555a;
+  box-shadow: 0 0 0 0 #fff, 0 0 0 3px #35555a;
+}
+
+.topo_site_home p {
+  text-align: center;
+  color: white;
+}
+
+/*Tópicos com o que vai ser abordado nos temas*/
+
+.topicos {
+  margin-top: 20%;
+  height: 100rem;
+  color: white;
+}
+
+.topicos h1 {
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.topicos p {
+  font-size: 16px;
+}
+.topicos ul {
+  margin-left: 4%;
+}
+
+.topicos ul a {
+  text-decoration: none;
+  color: white;
+}
+
+/* Definindo o layout intercalado */
+.conteudoenergia,
+.conteudoacao {
+  float: left; /* Coloca as divs "Energia Nuclear" e "Ação Climática" à esquerda */
+  width: 50%; /* Divide a largura da linha em duas */
+  margin: 5%;
+}
+
+.conteudolixo {
+  float: right; /* Coloca a div "Lixo Atômico" à direita */
+  width: 50%; /* Ocupa a outra metade da largura da linha */
+  margin: 5%;
+}
+
+.energia_nuclear img {
+  display: grid;
+  float: right;
+  margin-right: 15%;
+  margin-top: 7%;
+}
+
+.acao_climatica img {
+  display: block;
+  justify-content: flex-end;
+  align-items: end;
+  float: right;
+  margin-right: 15%;
+  margin-top: 7%;
+}
+.lixo_atomico img {
+  display: block;
+  justify-content: flex-end;
+  align-items: end;
+  float: left;
+  margin-left: 15%;
+  margin-top: 7%;
+}
+
+.energia_nuclear,
+.lixo_atomico,
+.acao_climatica {
+  height: 40rem;
+  margin: 25rem;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+/*Imagem de fundo do tópico*/
+.energia_nuclear#img01 {
+  background-image: linear-gradient(to right, rgba(0, 0, 0), rgba(0, 0, 0, 0)),
+    url(../assets/usina.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: inset 6px 6px 13px 0px rgba(0, 0, 0, 0.53);
+  background-attachment: fixed;
+  background-position: left center;
+}
+
+.lixo_atomico#img02 {
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0)),
+    url(../assets/lixo002.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: inset 6px 6px 13px 0px rgba(0, 0, 0, 0.53);
+  background-attachment: fixed;
+  background-position: left center;
+}
+
+.acao_climatica#img03 {
+  background-image: linear-gradient(to right, rgb(0, 0, 0), rgba(0, 0, 0, 0.4)),
+    url(../assets/protestoacao.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: inset 6px 6px 13px 0px rgba(0, 0, 0, 0.53);
+  background-attachment: fixed;
+  background-position: left center;
+}
+
+.topicos p {
+  margin-top: 3%;
+  text-align: left;
+}
+
+.topicos li {
+  margin-top: 3%;
+}
+
+/*Footer*/
+
+footer {
+  background-color: #f3f3f3;
+  margin-top: 80rem;
+  clear: both;
+  bottom: 0;
+  width: 100%;
+}
+.footerContainer {
+  width: 100%;
+  padding: 70px 30px 40px;
+}
+.footerNav {
+  margin: 30px 0;
+}
+.footerNav ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  align-items: center;
+}
+.footerNav ul li a {
+  color: black;
+  margin: 20px;
+  text-decoration: none;
+  font-size: 1em;
+  opacity: 0.7;
+  transition: 0.5s;
+  text-transform: uppercase; /* Transforma todo o texto em maiúsculas */
+  font-weight: bold;
+}
+.footerNav ul li a:hover {
+  opacity: 1;
+}
+.footerBottom {
+  background-color: #d8d7d7;
+  padding: 20px;
+  text-align: center;
+  position: relative; /* Alteração aqui */
+  bottom: 0; /* Alteração aqui */
+  width: 100%; /* Alteração aqui */
+}
+.footerBottom p {
+  color: black;
+  font-weight: bold;
+}
+
+/*Responsividade*/
+
+@media screen and (max-width: 768px) {
+  /*Ajuste das imagens*/
+  .energia_nuclear#img01 {
+    background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0),
+        rgba(0, 0, 0, 0.5)
+      ),
+      url(../assets/usina.jpg);
+    background-position: center center;
+  }
+
+  .lixo_atomico#img02 {
+    background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0),
+        rgba(0, 0, 0, 0.5)
+      ),
+      url(../assets/lixo002.jpg);
+    background-position: center center;
+  }
+
+  .acao_climatica#img03 {
+    background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0),
+        rgba(0, 0, 0, 0.5)
+      ),
+      url(../assets/protestoacao.jpg);
+    background-position: center center;
+  }
+
+  /*Fim do ajuste das imagens*/
+
+  /*Arrumando todo o conteudo*/
+  .conteudoenergia,
+  .conteudoacao,
+  .conteudolixo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+    width: 80%;
+  }
+
+  .conteudolixo {
+    margin: 6vh;
+  }
+
+  .conteudoenergia h1,
+  p,
+  .conteudolixo h1,
+  p,
+  .conteudoacao h1,
+  p {
+    margin-bottom: 2rem;
+  }
+
+  .conteudoenergia ul li,
+  .conteudoacao ul li,
+  .conteudolixo ul li {
+    list-style-type: none;
+
+    padding: 8px;
+    font-weight: bold;
+    font-size: 3vh;
+  }
+
+  .conteudoenergia p,
+  .conteudoacao p,
+  .conteudolixo p {
+    line-height: 2rem;
+    text-align: justify;
+  }
+
+  /*Header/NavBar*/
+
+  .logo {
+    max-width: 60px;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  .logonome {
+    display: block;
+    position: absolute;
+    margin: 3.5rem;
+    margin-left: 6rem;
+    font-weight: bold;
+    color: #0097b2;
+    /* text-align: center; */
+    font-size: 1.3rem;
+    margin-top: 4.2rem;
+  }
+
+  #logonome {
+    color: white;
+  }
+
+  /*Todo NAVBAR/HEADER*/
+
+  .cabecalho {
+    padding: 5px 4%;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #61a06500;
+    z-index: 1000;
+  }
+
+  .cabecalho_menu {
+    display: block;
+    position: fixed;
+    top: 9.5%;
+    left: 0;
+    width: 100%;
+    background-color: #eff6f7c1;
+    flex-direction: column;
+    align-items: center;
+    backdrop-filter: blur(50px);
+    overflow: hidden;
+    max-height: 0; /*A altura vai começar em 0*/
+    transition: max-height 0.7s ease-in-out;
+  }
+
+  .cabecalho_menu.open {
+    max-height: 300px; /* Change max-height to an appropriate value */
+    overflow: visible;
+  }
+
+  /* Adicionando transição ao fechar o menu */
+  .cabecalho_menu:not(.open) {
+    transition: max-height 0.1s ease-in-out;
+  }
+
+  .cabecalho_menu a {
+    margin: 10px 0;
+    text-decoration: none;
+    color: #466586;
+    text-transform: uppercase;
+    transition: opacity 0.3s ease-in-out 0.3s; /* Delay pra transicionar a opacidade*/
+  }
+  .cabecalho_menu.open a {
+    opacity: 1; /* Quando o menu abrir a opacidade vai mudar pra 1, assim conseguindo visualizar os links*/
+  }
+
+  .cabecalho_menu a:hover {
+    color: #8bc3ff;
+  }
+
+  /* Adicionando transição ao fechar o menu */
+  .cabecalho_menu:not(.open) {
+    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  }
+
+  .cabecalho_menu:not(.open) a {
+    opacity: 0; /* Colocar opacidade em 0 para ocultar ao fechar o menu*/
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    transition: opacity 0.2s ease-in-out; /* Transição suave para a opacidade */
+  }
+
+  .menu-toggle:checked ~ .cabecalho_menu {
+    display: flex;
+    max-height: 300px; /* Valor ajustável */
+  }
+
+  /*Menu Hamburguer*/
+  /* Atualizando estilos do menu ícone ao fechar */
+  .menu-toggle:checked + .menu-icon span::before {
+    transform: translateY(6px) rotate(45deg);
+  }
+
+  .menu-toggle:checked + .menu-icon span::after {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+
+  .menu-toggle:checked + .menu-icon span {
+    background-color: transparent; /* Esconde a linha do meio ao transformar */
+  }
+
+  /*FIM - Todo NAVBAR/HEADER*/
+
+  .container {
+    max-width: 90%;
+  }
+
+  .topicos {
+    /*Div que contém todos os tópicos*/
+    width: 100% !important;
+  }
+
+  .topicos_container h1 {
+    margin-top: 2.5rem;
+  }
+
+  .topico {
+    margin-left: 0 !important;
+    text-align: center !important ;
+    text-decoration: underline;
+    color: rgb(13, 91, 30);
+  }
+
+  .topico h3 {
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: bold;
+    color: rgb(28, 13, 91) !important;
+  }
+
+  .img-container-topicos {
+    display: none !important; /*Sumir espaçamento da div*/
+  }
+  .img-container-topicos img {
+    display: none; /*Sumir imagem*/
+  }
+
+  .img-container {
+    width: 100% !important;
+  }
+
+  section a {
+    font-size: 0.7rem !important;
+    line-height: 2rem !important;
+    text-decoration: underline !important;
+  }
+
+  /*FOOTER*/
+  .footerNav ul {
+    flex-direction: column;
+  }
+  .footerNav ul li {
+    width: 100%;
+    text-align: center;
+    margin: 10px;
+  }
+}

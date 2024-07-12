@@ -1,0 +1,17 @@
+body{
+    background-color: #65B06A;
+  }
+  
+
+  footer{
+    margin-top: 10rem;
+    
+  }
+
+  .cabecalho a{
+    color: white;
+  }
+
+  .cabecalho a:hover{
+    color: #39693c;
+  }
